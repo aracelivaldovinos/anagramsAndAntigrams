@@ -11,4 +11,8 @@ describe('#anagrams_antigrams') do
     anagram2 = Word.new("tea")
     expect(anagram2.anagrams_antigrams("eat")).to(eq("These words are anagrams."))
   end
+  # it("Check if the inputs are wordssibility that words might have different cases but should still be anagrams") do
+  #   anagram3 = Word.new("kmpn")
+  #   expect(anagram3.anagrams_antigrams("pkmn")).to(eq("You need to input actual words!"))
+  # end
 end
