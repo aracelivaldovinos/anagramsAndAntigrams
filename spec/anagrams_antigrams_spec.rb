@@ -7,6 +7,10 @@ describe('#anagrams_antigrams') do
       anagram1 = Word.new("ruby!")
       expect(anagram1.anagrams_antigrams("bury.")).to(eq("These words are anagrams."))
     end
+    it("Check if two words are anagrams") do
+      anagram1 = Word.new("The Morse Code")
+      expect(anagram1.anagrams_antigrams("Here come dots!")).to(eq("These words are anagrams."))
+    end
   # it("It will account for the possibility that words might have different cases but should still be anagrams") do
   #   anagram2 = Word.new("tea")
   #   expect(anagram2.anagrams_antigrams("eat")).to(eq("These words are anagrams."))
