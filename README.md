@@ -6,9 +6,9 @@
 
 ## Technologies Used
 
-* _Ruby_
-* _Ruby Gem: rspec, pry _
 * _Docker_
+* _Ruby_
+* _Ruby Gem: rspec, pry_
 
 ## Description
 _An algorithm with an anagram method that follows the rules included below:_
@@ -22,27 +22,10 @@ _Two words are anagrams if they contain the exact same letters in a different or
 
 ## Setup/Installation Requirements
 * _To use Docker, you will first need to [install](https://docs.docker.com/get-docker/) it. Once it's installed, Docker should be open so you can actually run Docker commands in the terminal._
-
-
-## Running IRB
-
-You don't need this setup for running IRB (Ruby REPL) by itself. To use IRB on its own, do the following (after Docker is installed and open):
-
-```
-$ docker pull ruby:2.6.5
-```
-
-This pulls down the image of Ruby we use at Epicodus. You only need to do this once.
-
-Once you have it on your machine, you can run IRB with the following command:
-
-```
-$ docker run -it ruby:2.6.5 irb
-```
-
-We recommend creating an alias (called something like `dirb` for Docker IRB) to make the command easier to use.
-
-You can exit IRB as normal by typing `exit`.
+* _Clone that repository down to your desktop._
+* _To run tests on the current code, simply run the command `docker-compose up` in the root directory of this project._
+* _To run tests on your own code, replace the `lib` and `spec` directories with your own source code (for `lib`) and tests (for `spec`). Then run the command `docker-compose up --build` in terminal_
+* _To run script.rb run docker-compose run --rm app ruby lib/script.rb_
 
 ## Using This Repository for Docker
 
@@ -77,7 +60,6 @@ Once again, we recommend aliasing this command if you plan to run scripts often.
 
 ## Known Bugs/Goals
 * _No known bugs_
-
 
 
 ## License
