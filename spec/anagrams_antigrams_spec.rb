@@ -3,8 +3,9 @@ require('anagrams_antigrams')
 require('pry')
 
 describe('#anagrams_antigrams') do
-  it("") do
-    expect(title_case("")).to(eq(""))
+  it("Check if two words are anagrams") do
+    anagram1 = Word.new("ruby")
+    expect(anagram1.anagrams_antigrams("bury")).to(eq("These words are anagrams."))
   end
 
  
