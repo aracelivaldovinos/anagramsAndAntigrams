@@ -5,10 +5,12 @@ class Word
 
   def anagrams_antigrams(str2)
     comparing_string = str2.gsub(/[^a-zA-Z0-9\-]/,"").downcase
-    if (@user_input.chars.sort == comparing_string.chars.sort) && ((@user_input.match?(/[aeiou]/i)) || (comparing_string.match?(/[aeiou]/i)) )
+    if (@user_input.chars.sort == comparing_string.chars.sort) && ((@user_input.match?(/[aeiou]/i)) || (comparing_string.match?(/[aeiou]/i)))
       return ("These words are anagrams.")
     elsif (@user_input.chars.sort == comparing_string.chars.sort)
       return ("You need to input actual words!") 
+    elsif (@user_input.match?(/[aeiou]/i)) && (comparing_string.match?(/[aeiou]/i))
+      return ("These words have no letter matches and are antigrams.") 
     else
       return ("These words are not anagrams.")
     end

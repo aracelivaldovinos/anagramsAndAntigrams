@@ -19,9 +19,9 @@ describe('#anagrams_antigrams') do
       anagram3 = Word.new("kmpn")
       expect(anagram3.anagrams_antigrams("pkmn")).to(eq("You need to input actual words!"))
     end
-  # it("Check whether they are actually antigrams.") do
-  #   anagram3 = Word.new("hi")
-  #   expect(anagram3.anagrams_antigrams("bye")).to(eq("These words have no letter matches and are antigrams."))
-  # end
+    it("Check whether they are actually antigrams.") do
+      anagram3 = Word.new("hi")
+      expect(anagram3.anagrams_antigrams("bye")).to(eq("These words have no letter matches and are antigrams."))
+    end
  
 end
