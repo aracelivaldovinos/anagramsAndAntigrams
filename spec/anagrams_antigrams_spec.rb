@@ -32,7 +32,11 @@ describe('#anagrams_antigrams') do
       expect(anagram5.anagrams_antigrams("would you like to dance")).to(eq("These words have no letter matches and are antigrams."))
     end 
     it("It will account for two sentences being compared as anagrams or antigrams") do
+      anagram6 = Anagram.new("large picture halls, I bet")
+      expect(anagram6.anagrams_antigrams("the public art galleries")).to(eq("These words are anagrams."))
+    end
+    it("It check for non-words") do
       anagram3 = Anagram.new("large picture halls, I bet")
-      expect(anagram3.anagrams_antigrams("the public art galleries")).to(eq("These words are anagrams."))
+      expect(anagram3.anagrams_antigrams("1234the public art galleries")).to(eq("Error. You've entered one non-word. Please try again."))
     end
 end
