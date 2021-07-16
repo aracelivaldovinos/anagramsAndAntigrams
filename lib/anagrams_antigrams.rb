@@ -9,8 +9,8 @@ class Word
         return ("These words are anagrams.")
       elsif (word2).include?element 
         return ("You need to input actual words!") 
-      else
-        return ("These words are not anagrams.")
+      elsif word2.match?(/[aeiou]/i) && element.match?(/[aeiou]/i)
+        return ("These words have no letter matches and are antigrams.")
       end 
     end 
   end
