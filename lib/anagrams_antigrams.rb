@@ -2,13 +2,16 @@ class Word
   def initialize(str1)
     @user_input = str1.gsub(/[^a-zA-Z0-9\-]/,"").downcase
   end 
+
   def anagrams_antigrams(str2)
     comparing_string = str2.gsub(/[^a-zA-Z0-9\-]/,"").downcase
-     if @user_input.chars.sort == comparing_string.chars.sort
+    if (@user_input.chars.sort == comparing_string.chars.sort) && ((@user_input.match?(/[aeiou]/i)) || (comparing_string.match?(/[aeiou]/i)) )
       return ("These words are anagrams.")
-     else
+    elsif (@user_input.chars.sort == comparing_string.chars.sort)
+      return ("You need to input actual words!") 
+    else
       return ("These words are not anagrams.")
-     end
+    end
   end 
 end 
 
