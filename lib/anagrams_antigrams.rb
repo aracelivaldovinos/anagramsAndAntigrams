@@ -13,6 +13,8 @@ class Anagram
       return ("You need to input actual words!") 
     elsif vowels_in_string
       return ("These words have no letter matches and are antigrams.") 
+    else
+      return ("Error. You've entered one non-word. Please try again.") 
     end
   end 
 end 
