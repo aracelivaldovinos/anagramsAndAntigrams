@@ -35,8 +35,16 @@ describe('#anagrams_antigrams') do
       anagram6 = Anagram.new("large picture halls, I bet")
       expect(anagram6.anagrams_antigrams("the public art galleries")).to(eq("These words are anagrams."))
     end
-    it("It check for non-words") do
+    it("It will check for non-words") do
       anagram3 = Anagram.new("large picture halls, I bet")
-      expect(anagram3.anagrams_antigrams("1234the public art galleries")).to(eq("Error. You've entered one non-word. Please try again."))
+      expect(anagram3.anagrams_antigrams("1234")).to(eq("Error. You've entered one non-word. Please try again."))
+    end
+    it("It will check for non-words") do
+      anagram3 = Anagram.new("1234")
+      expect(anagram3.anagrams_antigrams("large picture halls, I bet")).to(eq("Error. You've entered one non-word. Please try again."))
+    end
+    it("It will check for non-words") do
+      anagram3 = Anagram.new("1234")
+      expect(anagram3.anagrams_antigrams("1arge p23icture halls, I bet")).to(eq("Error. You've entered one non-word. Please try again."))
     end
 end

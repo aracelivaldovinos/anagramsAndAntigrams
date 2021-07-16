@@ -6,12 +6,13 @@ class Anagram
   def anagrams_antigrams(str2)
     comparing_string = str2.gsub(/[^a-zA-Z0-9\-]/,"").downcase
     vowels_in_string = @user_input.match?(/[aeiou]/i) || comparing_string.match?(/[aeiou]/i)
+    vowels_in_both_string = @user_input.match?(/[aeiou]/i) && comparing_string.match?(/[aeiou]/i)
     strings_match = @user_input.chars.sort == comparing_string.chars.sort
     if strings_match && vowels_in_string
       return ("These words are anagrams.")
     elsif strings_match
       return ("You need to input actual words!") 
-    elsif vowels_in_string
+    elsif vowels_in_both_string
       return ("These words have no letter matches and are antigrams.") 
     else
       return ("Error. You've entered one non-word. Please try again.") 
