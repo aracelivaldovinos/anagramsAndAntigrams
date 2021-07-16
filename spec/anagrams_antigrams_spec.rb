@@ -23,5 +23,16 @@ describe('#anagrams_antigrams') do
       anagram5 = Anagram.new("hi")
       expect(anagram5.anagrams_antigrams("bye")).to(eq("These words have no letter matches and are antigrams."))
     end
-    
+    it("Check whether they are actually antigrams.") do
+      anagram5 = Anagram.new("bye")
+      expect(anagram5.anagrams_antigrams("hi")).to(eq("These words have no letter matches and are antigrams."))
+    end 
+    it("Check whether this sencetence is actually antigrams.") do
+      anagram5 = Anagram.new("hello my name is Araceli")
+      expect(anagram5.anagrams_antigrams("would you like to dance")).to(eq("These words have no letter matches and are antigrams."))
+    end 
+    it("It will account for two sentences being compared as anagrams or antigrams") do
+      anagram3 = Anagram.new("large picture halls, I bet")
+      expect(anagram3.anagrams_antigrams("the public art galleries")).to(eq("These words are anagrams."))
+    end
 end
