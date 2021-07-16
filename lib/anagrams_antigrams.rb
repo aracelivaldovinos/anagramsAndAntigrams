@@ -5,10 +5,10 @@ class Word
 
   def anagrams_antigrams(word2)
     @array1.each do |element|
-      if (word2).include?element && ("aeiou").include?element
+      if word2.include?(element)&& word2.match?(/[aeiou]/i)
         return ("These words are anagrams.")
       elsif (word2).include?element 
-        return ("You need to input actual words!" 
+        return ("You need to input actual words!") 
       else
         return ("These words are not anagrams.")
       end 
