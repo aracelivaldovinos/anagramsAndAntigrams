@@ -10,6 +10,9 @@ if anagram.check_if_anagram == "These words are anagrams." || anagram.check_if_a
   puts anagram.check_if_anagram
 else 
   puts anagram.check_if_antigram
+end 
+
+
 
 
 

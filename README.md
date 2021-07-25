@@ -28,7 +28,7 @@ _Two words are anagrams if they contain the exact same letters in a different or
 * _To run script.rb run `docker-compose run --rm app ruby lib/script.rb`_
 
 ## Known Bugs/Goals
-* _No known bugs_
+* _Add a working script.rb_
 
 
 ## License
