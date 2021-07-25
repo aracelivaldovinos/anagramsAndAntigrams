@@ -24,7 +24,7 @@ class Anagram
       return "These words are neither anagrams nor antigrams"
       else
       return "These words have no letter matches and are antigrams."
-    end
+      end
     end 
   end 
 end 
