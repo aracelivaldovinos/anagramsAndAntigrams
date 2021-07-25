@@ -1,50 +1,59 @@
 require('rspec')
 require('anagrams_antigrams')
 require('pry')
-
-describe('#anagrams_antigrams') do
-  it("Check if two words are anagrams") do
-    anagram1 = Anagram.new("ruby!")
-    expect(anagram1.anagrams_antigrams("bury.")).to(eq("These words are anagrams."))
-  end
-  it("Check for words that have different cases") do
-    anagram2 = Anagram.new("Tea")
-    expect(anagram2.anagrams_antigrams("Eat")).to(eq("These words are anagrams."))
-  end
-  it("It will account for two sentences being compared as anagrams or antigrams") do
-    anagram3 = Anagram.new("The Morse Code")
-    expect(anagram3.anagrams_antigrams("Here come dots!")).to(eq("These words are anagrams."))
-  end
-  it("Check if the inputs are words") do
-    anagram4 = Anagram.new("kmpn")
-    expect(anagram4.anagrams_antigrams("pkmn")).to(eq("You need to input actual words!"))
-  end
-  it("Check whether they are actually antigrams.") do
-    anagram5 = Anagram.new("hi")
-    expect(anagram5.anagrams_antigrams("bye")).to(eq("These words have no letter matches and are antigrams."))
-  end
-  it("Check whether they are actually antigrams.") do
-    anagram5 = Anagram.new("bye")
-    expect(anagram5.anagrams_antigrams("hi")).to(eq("These words have no letter matches and are antigrams."))
+describe '#Anagrams' do
+  describe('#check_if_anagram') do
+    it("Check if two words are anagrams") do
+      anagram = Anagram.new("ruby!", "bury.")
+      expect(anagram.check_if_anagram).to(eq("These words are anagrams."))
+    end
   end 
-  it("Check whether this sencetence is actually antigrams.") do
-    anagram5 = Anagram.new("hello my name is Araceli")
-    expect(anagram5.anagrams_antigrams("would you like to dance")).to(eq("These words have no letter matches and are antigrams."))
+  describe('#check_if_anagram') do
+    it("Check for words that have different cases") do
+      anagram = Anagram.new("Tea", "Eat")
+      expect(anagram.check_if_anagram).to(eq("These words are anagrams."))
+    end
   end 
-  it("It will account for two sentences being compared as anagrams or antigrams") do
-    anagram6 = Anagram.new("large picture halls, I bet")
-    expect(anagram6.anagrams_antigrams("the public art galleries")).to(eq("These words are anagrams."))
+  describe('#check_if_anagram') do
+    it("It will account for two sentences being compared as anagrams or antigrams") do
+      anagram = Anagram.new("The Morse Code", "Here come dots!")
+      expect(anagram.check_if_anagram).to(eq("These words are anagrams."))
+    end
   end
-  it("It will check for non-words") do
-    anagram3 = Anagram.new("large picture halls, I bet")
-    expect(anagram3.anagrams_antigrams("1234")).to(eq("Error. You've entered one non-word. Please try again."))
+  describe('#check_if_anagram') do
+    it("Check if the inputs are words") do
+      anagram = Anagram.new("kmpn","pkmn")
+      expect(anagram.check_if_anagram).to(eq("You need to input actual words!"))
+    end
+  end 
+  describe('#check_if_anagram') do
+    it("It will account for two sentences being compared as anagrams or antigrams") do
+      anagram = Anagram.new("large picture halls, I bet", "the public art galleries")
+      expect(anagram.check_if_anagram).to(eq("These words are anagrams."))
+    end 
   end
-  it("It will check for non-words") do
-    anagram3 = Anagram.new("1234")
-    expect(anagram3.anagrams_antigrams("large picture halls, I bet")).to(eq("Error. You've entered one non-word. Please try again."))
+  describe('#check_if_anagram') do
+    it("It will check for non-words") do
+    anagram = Anagram.new("ap3e!", "p3ea?")
+    expect(anagram.check_if_anagram).to(eq("These words are anagrams."))
+    end 
   end
-  it("It will check for non-words") do
-    anagram3 = Anagram.new("1234")
-    expect(anagram3.anagrams_antigrams("1arge p23icture halls, I bet")).to(eq("Error. You've entered one non-word. Please try again."))
-  end
-end
+  describe('#check_if_antigram') do
+    it("Check whether they are actually antigrams.") do
+      anagram = Anagram.new("hi", "bye")
+      expect(anagram.check_if_antigram).to(eq("These words have no letter matches and are antigrams."))
+    end
+  end 
+  describe('#check_if_antigram') do
+    it("tells a user if their words are neither anagrams nor antigrams") do
+      anagram = Anagram.new("dad","cat")
+      expect(anagram.check_if_antigram).to(eq("These words are neither anagrams nor antigrams"))
+    end
+  end 
+  describe('#check_if_antigram') do
+    it("tells a user if their words are neither anagrams nor antigrams") do
+      anagram = Anagram.new("Hello my name is","Araceli Valdovinos")
+      expect(anagram.check_if_antigram).to(eq("These words are neither anagrams nor antigrams"))
+    end
+  end 
+end 
